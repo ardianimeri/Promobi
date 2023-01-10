@@ -8,10 +8,9 @@ html{
     box-sizing: border-box;
 }
 body {
-    
+    background-color: rgb(43, 43, 43);
 }
 @media (min-width: 1600px){
-
     .container {
     max-width: 1590px;
     margin-right: auto;
@@ -23,20 +22,16 @@ body {
     margin: auto;
 }
 .header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    background-color: black;
-    /* position: fixed; */
+    background: transparent;
+    box-shadow: 5px 15px 25px rgb(255, 255, 255,0.3);
 }
 header{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-content: center; 
-    background-color: black;
+    align-content: center;
+    height: 100px; 
+    background-color: transparent;
 }
 header img{
     width: 200px;
@@ -68,19 +63,23 @@ nav ul li {
      /* padding: 0 50px;  */
     /* transition: transform 0.5s; */
 }
-.active, nav ul li:hover {
-      /* transform: translateY(-5px);   */
-     /* border: 3px solid orange; */
-     background: grey;
-     border-radius: 3px;
+nav ul li:hover {
+    transform: translateY(-5px);
+    color: orange;  
+    /* border: 3px solid orange;  */
+     /* background: grey;
+     border-radius: 3px; */
 }
-
-/* nav ul li a:hover::after{
-    border: 1px solid orange;
-} */
+.nav-link[aria-current="page"]{
+    color: orange;
+    border-radius: 3px;
+}
+ nav ul li a:hover{
+    color: orange;
+} 
 nav ul li a {
     text-decoration: none;
-    color: orange;
+    color: grey;
     font-size: 20px;
 }
 /* nav ul li:hover {
@@ -88,7 +87,7 @@ nav ul li a {
 } */
 
 .sub-menu {
-     display: none;
+    display: none;
 }
 nav ul li:hover .sub-menu {
     /* display: flex;
@@ -128,13 +127,12 @@ nav ul li:hover .sub-menu ul li:last-child {
     border-bottom: 0;
 }
 nav ul li:hover .sub-menu ul li a:hover {
-    color: grey;
+    color: orange;
 }
 .main {
-    background-color: #262626;
+    background: transparent;
 }
 main{
-    
     width: 100%;
     display: flex;
     flex-direction: column;

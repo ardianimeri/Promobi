@@ -86,43 +86,43 @@ nav ul li a {
     display: none;
 }
 nav ul li:hover .sub-menu {
-    /* display: flex;
-    position: absolute; 
-    background-color: orange;
-    margin-top: 15px;  */
-    /* margin-left: -15px; */
-    display: block;
-    position: absolute;
-    background-color: black;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-left: -15px;
+   /* display: flex;
+   position: absolute; 
+   background-color: orange;
+   margin-top: 15px;  */
+   /* margin-left: -15px; */
+   display: block;
+   position: absolute;
+   background-color: black;
+   border-radius: 5px;
+   margin-top: 10px;
+   margin-left: -15px;
+   z-index: 9999;
 }
 nav ul li:hover .sub-menu ul {
-    /* display: flex;
-    flex-wrap: wrap;
-    flex-direction: column; */
-    display: block;
-    margin: 10px;
-    
+   /* display: flex;
+   flex-wrap: wrap;
+   flex-direction: column; */
+   display: block;
+   margin: 10px;
 }
 nav ul li:hover .sub-menu ul li {
-    width: 150px;
-    padding: 10px;
-    border-bottom: 1px solid grey;
-    background: transparent;
-    border-radius: 0;
-    text-align: left;
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;     */
+   width: 150px;
+   padding: 10px;
+   border-bottom: 1px solid grey;
+   background: transparent;
+   border-radius: 0;
+   text-align: left;
+   /* display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;     */
 }
 nav ul li:hover .sub-menu ul li:last-child {
-    border-bottom: 0;
+   border-bottom: 0;
 }
 nav ul li:hover .sub-menu ul li a:hover {
-    color: orange;
+   color: grey;
 }
 .main {
     background: transparent;

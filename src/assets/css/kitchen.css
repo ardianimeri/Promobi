@@ -7,7 +7,6 @@ body {
     background-color: rgb(43, 43, 43);
 }
 @media (min-width: 1600px){
-
     .container {
     max-width: 1590px;
     margin-right: auto;
@@ -26,9 +25,9 @@ header{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-content: center; 
+    align-content: center;
     height: 100px; 
-    background: transparent;
+    background-color: transparent;
 }
 header img{
     width: 200px;
@@ -60,19 +59,23 @@ nav ul li {
      /* padding: 0 50px;  */
     /* transition: transform 0.5s; */
 }
-.active, nav ul li:hover {
-      /* transform: translateY(-5px);   */
-     /* border: 3px solid orange; */
-     background: grey;
-     border-radius: 3px;
+nav ul li:hover {
+    transform: translateY(-5px);
+    color: orange;  
+    /* border: 3px solid orange;  */
+     /* background: grey;
+     border-radius: 3px; */
 }
-
-/* nav ul li a:hover::after{
-    border: 1px solid orange;
-} */
+.nav-link[aria-current="page"]{
+    color: orange;
+    border-radius: 3px;
+}
+ nav ul li a:hover{
+    color: orange;
+} 
 nav ul li a {
     text-decoration: none;
-    color: orange;
+    color: grey;
     font-size: 20px;
 }
 /* nav ul li:hover {
@@ -80,7 +83,7 @@ nav ul li a {
 } */
 
 .sub-menu {
-     display: none;
+    display: none;
 }
 nav ul li:hover .sub-menu {
     /* display: flex;
@@ -94,7 +97,7 @@ nav ul li:hover .sub-menu {
     border-radius: 5px;
     margin-top: 10px;
     margin-left: -15px;
-    z-index: 9999;
+    /* z-index: 9999; */
 }
 nav ul li:hover .sub-menu ul {
     /* display: flex;
@@ -102,6 +105,7 @@ nav ul li:hover .sub-menu ul {
     flex-direction: column; */
     display: block;
     margin: 10px;
+    
 }
 nav ul li:hover .sub-menu ul li {
     width: 150px;
@@ -119,7 +123,7 @@ nav ul li:hover .sub-menu ul li:last-child {
     border-bottom: 0;
 }
 nav ul li:hover .sub-menu ul li a:hover {
-    color: grey;
+    color: orange;
 }
 .main {
     background: transparent;
@@ -250,6 +254,30 @@ main .text p {
         transform: none;
     }
 }
+@-webkit-keyframes fadeRight{
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
 .fadeUp {
     -webkit-animation-name: fadeUp;
     animation-name: fadeUp;
@@ -261,6 +289,10 @@ main .text p {
 .fadeLeft {
     -webkit-animation-name: fadeLeft;
     animation-name: fadeLeft;
+}
+.fadeRight {
+    -webkit-animation-name: fadeRight;
+    animation-name: fadeRight;
 }
 /*.box {
     position: relative;
