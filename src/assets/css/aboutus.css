@@ -64,7 +64,7 @@ nav ul li {
     /* transition: transform 0.5s; */
 }
 nav ul li:hover {
-    transform: translateY(-5px);
+    transform: scale(1.08);
     color: orange;  
     /* border: 3px solid orange;  */
      /* background: grey;
@@ -152,8 +152,8 @@ main{
     transform:opacity 0.7;
 }
 .titlewrapper img{
-    width: 100%;   
-    margin-top: -45%;
+    width: 111%;
+    margin-top: -40%;
 }
 
 .text a{
@@ -206,6 +206,7 @@ main{
     width: 100%;
     height:630px;
     box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.3);
+    border-top:1px solid #f98d21a4 ;
     
 }
 
