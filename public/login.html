@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="assets/css/login.css"> 
+    <!--<script src="/assets/js/form-validation.js"></script> -->
+</head>
+<body>
+    <!-- <div class="container">
+        <h1 class="label">User Login</h1>
+        <form class="login-form" action="">
+            <div class="label-2">Email or Phone Number</div>
+            <input type="text" placeholder="Email or Phone Number" name="" id="email">
+             <div class="email-error">Please fill up your Email or Phone Number</div> 
+            <div class="label-3">Password</div>
+            <input type="password" placeholder="Password" name="" id="password">
+             <div class="password-error">Please fill up your Password</div> 
+            <button type="submit">Login</button>
+        </form>
+    </div> -->
+    <div class="container">
+        <div class="wrapper">
+            <div class="form">
+                <form id="login" name="Login/Register"action="index.html">
+                        <input type="text" id="email" placeholder="Enter your email"/>
+                        <p id="email-label"></p>
+                        <input type="text" id="password" placeholder="Enter your Password"/>
+                        <p id="password-label"></p>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const email = document.getElementById('email')
+        const phone = document.getElementById('password')
+
+        document.querySelector('button').addEventListener('click', (e) => {
+            e.preventDefault()
+            
+            // validate email
+            if(validateEmail(email.value)) {
+                document.querySelector('#email-label').innerText = 'Email is not valid'
+                email.style.border = '3px solid red'
+            } else {
+                email.style.border = '3px solid green'
+                document.querySelector('#email-label').innerText = 'Email is valid'
+                window.location = "/pages/index.html";
+            }
+        //     // // validate phone
+        //     // if(validatePhone(phone.value)) {
+        //     //     document.querySelector('#phone-label').innerText = 'Phone number is not valid'
+        //     //     phone.style.border = '3px solid red'
+        //     // } else {
+        //     //     phone.style.border = '3px solid green'
+        //     //     document.querySelector('#phone-label').innerText = 'Phone number is valid'
+        //     // }
+
+         console.log(email.value)
+        //     // console.log(phone.value)
+         })
+        // function validate(){
+        //     const email = document.getElementById('email')
+        //     const phone = document.getElementById('password')
+        //     if(validateEmail(email.value)) {
+        //         document.querySelector('#email-label').innerText = 'Email is not valid'
+        //         email.style.border = '3px solid red'
+        //     } else {
+        //         email.style.border = '3px solid green'
+        //         document.querySelector('#email-label').innerText = 'Email is valid'
+        //     }
+        //     if(regex.test(email))   
+        // }
+
+        function validateEmail(email) {
+            const regex = /[a-zA-Z0-9\.\_\-]+\@[a-z]+\.[a-z]{3}/g
+            return email.match(regex) === null
+        }
+
+        // function validatePhone(phone) {
+        //     const regex = /[0-9]{9}/g
+        //     return phone.match(regex) === null
+        // }
+         function validate(){
+             const regex = /[a-zA-Z0-9\.\_\-]+\@[a-z]+\.[a-z]{3}/g
+             const email= document.getElementById("email").value;
+             const password= document.getElementById("password").value;
+             if(regex.text(email)){
+                 alert("login Successfuly");
+                 return true;
+             }
+             else{
+                 alert("Invalid Information");
+                 return false;
+             }
+         }
+    </script>
+</body>
+</html>
