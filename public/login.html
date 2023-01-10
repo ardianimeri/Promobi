@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login/Register</title>
     <link rel="stylesheet" href="/src/assets/css/login.css"> 
-    <!--<script src="/assets/js/form-validation.js"></script> -->
+    
 </head>
 <body>
     <!-- <div class="container">
@@ -34,69 +34,6 @@
             </div>
         </div>
     </div>
-    <script>
-        const email = document.getElementById('email')
-        const phone = document.getElementById('password')
-
-        document.querySelector('button').addEventListener('click', (e) => {
-            e.preventDefault()
-            
-            // validate email
-            if(validateEmail(email.value)) {
-                document.querySelector('#email-label').innerText = 'Email is not valid'
-                email.style.border = '3px solid red'
-            } else {
-                email.style.border = '3px solid green'
-                document.querySelector('#email-label').innerText = 'Email is valid'
-                window.location = "/pages/index.html";
-            }
-        //     // // validate phone
-        //     // if(validatePhone(phone.value)) {
-        //     //     document.querySelector('#phone-label').innerText = 'Phone number is not valid'
-        //     //     phone.style.border = '3px solid red'
-        //     // } else {
-        //     //     phone.style.border = '3px solid green'
-        //     //     document.querySelector('#phone-label').innerText = 'Phone number is valid'
-        //     // }
-
-         console.log(email.value)
-        //     // console.log(phone.value)
-         })
-        // function validate(){
-        //     const email = document.getElementById('email')
-        //     const phone = document.getElementById('password')
-        //     if(validateEmail(email.value)) {
-        //         document.querySelector('#email-label').innerText = 'Email is not valid'
-        //         email.style.border = '3px solid red'
-        //     } else {
-        //         email.style.border = '3px solid green'
-        //         document.querySelector('#email-label').innerText = 'Email is valid'
-        //     }
-        //     if(regex.test(email))   
-        // }
-
-        function validateEmail(email) {
-            const regex = /[a-zA-Z0-9\.\_\-]+\@[a-z]+\.[a-z]{3}/g
-            return email.match(regex) === null
-        }
-
-        // function validatePhone(phone) {
-        //     const regex = /[0-9]{9}/g
-        //     return phone.match(regex) === null
-        // }
-         function validate(){
-             const regex = /[a-zA-Z0-9\.\_\-]+\@[a-z]+\.[a-z]{3}/g
-             const email= document.getElementById("email").value;
-             const password= document.getElementById("password").value;
-             if(regex.text(email)){
-                 alert("login Successfuly");
-                 return true;
-             }
-             else{
-                 alert("Invalid Information");
-                 return false;
-             }
-         }
-    </script>
 </body>
+<script src="/src/assets/js/form-validation.js"></script> 
 </html>

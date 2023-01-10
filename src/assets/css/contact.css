@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    
+}
+@media (min-width: 1600px){
+
+    .container {
+    max-width: 1590px;
+    margin-right: auto;
+    margin-left: auto;
+    }
+}
+.wrapper {
+    width: 80%;
+    margin: auto;
+}
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background-color: black;
+    /* position: fixed; */
+}
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center; 
+    background-color: black;
+}
+header img{
+    width: 200px;
+}
+/* .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+} */
+nav {
+    /* width: 50%; */
+    /* height: 50px; */
+    display: flex;
+    align-items: center;
+}
+nav ul { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px; 
+}
+
+nav ul li {
+    /* height: 100px; */
+    list-style: none;
+    padding: 10px;
+     /* padding: 0 50px;  */
+    /* transition: transform 0.5s; */
+}
+.active, nav ul li:hover {
+      /* transform: translateY(-5px);   */
+     /* border: 3px solid orange; */
+     background: grey;
+     border-radius: 3px;
+}
+
+/* nav ul li a:hover::after{
+    border: 1px solid orange;
+} */
+nav ul li a {
+    text-decoration: none;
+    color: orange;
+    font-size: 20px;
+}
+/* nav ul li:hover {
+    color: orange;
+} */
+
+.sub-menu {
+     display: none;
+}
+nav ul li:hover .sub-menu {
+    /* display: flex;
+    position: absolute; 
+    background-color: orange;
+    margin-top: 15px;  */
+    /* margin-left: -15px; */
+    display: block;
+    position: absolute;
+    background-color: black;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: -15px;
+}
+nav ul li:hover .sub-menu ul {
+    /* display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; */
+    display: block;
+    margin: 10px;
+    
+}
+nav ul li:hover .sub-menu ul li {
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;     */
+}
+nav ul li:hover .sub-menu ul li:last-child {
+    border-bottom: 0;
+}
+nav ul li:hover .sub-menu ul li a:hover {
+    color: grey;
+}
+/* nav ul li a:hover {
+    color: orange;
+} */
+.main {
+    background-color: #262626;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+.iframe {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+ form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ form input, textarea {
+    font-size: 15px;
+    width: 100%;
+    margin: 20px;
+    background-color: black;
+    color:aliceblue;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    padding: 15px; 
+    resize: none;
+}
+.btn  {
+    text-decoration: none;
+    color:aliceblue;
+    background-color: orange;
+    text-align: center;
+    border: solid 1px orange;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 30px;
+    transition: transform 0.5s;
+}
+ .btn:hover {
+    background-color: #080808;
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+.footer {
+    background-color: black;
+    border-top: solid 1px orange;
+}
+footer {
+    background-color: black;
+}
+
+footer .contact-container{
+    width: 100%; 
+    padding: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+}
+.text-example {
+    color: grey;
+}
+
+.text-example img {
+    width: 150px;
+}
+footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    width: 100%;
+}
+footer .text-example h1 {
+    margin: 20% 0 10%;
+}
+footer .text-example p, a {
+    margin-top: 10%;
+    /* width: 100%; */
+    height: 20px;
+}
+
+.social-icons {
+    margin-top: 10%;
+}
+
+.text-example p i {
+    color: grey;
+    margin-right: 15px;
+    width: 16px;
+}
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: grey;
+}
+.social-icons a:hover {
+    color: orange;
+}   
+.social-icons a i{
+    transition: transform 0.5s;
+}
+.social-icons a i:hover {
+    transform: translateY(-5px);
+}
