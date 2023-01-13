@@ -401,7 +401,7 @@ footer .text-example p, a {
     transition: transform 0.5s;
 }
 .social-icons a i:hover {
-    transform: translateY(-5px);
+    transform: scale(1.08);
 }
 .location {
     color: grey;
