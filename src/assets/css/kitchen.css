@@ -145,19 +145,52 @@ main {
 /* main img {
     width: 600px;
 } */
+
+main .text-box{
+    display: grid;
+    border-bottom:solid 2px rgb(128,128,128);
+    border-radius: 3%;
+    margin-right: 4%;
+    margin-bottom: 0;
+    margin-top: 71%;
+
+}
 main .text {
+    font-family: Arial, Helvetica, sans-serif;
     color: grey;
     width: 50%;
+   
+
 }
 main .text h1 {
-    font-size: 50px;
+    font-family: 'Comfortaa', cursive;
+    font-size:  2.5rem;
+    text-align: center;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
 }
+h1:after {
+    content: '';
+    width: 60%;
+    margin: 0 20% 0 20%;
+    display: block;
+    height: 2px;
+    background-color: grey;
+    bottom: -5px;
+  }
 main .text p {
-    font-size: 30px;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.2rem;
+    text-align: justify;
+    padding-right: 1.2rem;
+    padding-left: 1.2rem;
+    padding-bottom:1.2rem ;
+    line-height: 150%;
 }
 .box img {
+    display: grid;
     width: 100%; 
-    height: auto;  
+    height: auto;
 }
 .box {
     width: 50%;
