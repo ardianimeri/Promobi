@@ -342,6 +342,7 @@ footer .text-example p, a {
     color: grey;
     margin-right: 15px;
     width: 16px;
+    height: 20px;
 }
 .social-icons a {
     text-decoration: none;
