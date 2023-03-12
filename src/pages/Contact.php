@@ -1,3 +1,34 @@
+<?php
+    require '../includes/dbconnect.php';
+
+    session_start();
+    if(isset($_POST['submit'])){
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $email = $_POST['email'];
+        $message = $_POST['message'];
+
+        $mailTo = 'ardiani_m2003@hotmail.com';
+        $headers = 'From: ' .$email;
+        $txt = 'You have received an e-mail from ' .$name . '. \n\n' .$message;
+        $info = '';
+
+        mail($mailTo, $name, $txt, $headers);
+        header('Location: contact.php?mailsend');
+        $query = $pdo->prepare('INSERT INTO contact (name, surname, email, message) VALUES (:name, :surname,:email, :message)');
+        $query->bindParam('name', $name);
+        $query->bindParam('surname', $surname);
+        $query->bindParam('email', $email);
+        $query->bindParam('message', $message);
+
+        if($query->execute()) {
+            $info = "Successfully sent";
+        } else {
+            $info = "A problem occurred!";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +37,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontakti</title>
-    <link rel="stylesheet" href="/src/assets/css/contact.css">
+    <link rel="stylesheet" href="../assets/css/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <script src="/src/assets/js/nav.js"></script>
+    <script src="../assets/js/nav.js"></script>
 </head>
 
 <body>
@@ -45,13 +76,13 @@
                         <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d53274.004632127864!2d21.128115239212377!3d42.42735291060949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x13547f11eb8090ab%3A0xb521ee9e8edef579!2sMobileria%20PROMOBI%2C%20Ferizaj!3m2!1d42.3822733!2d21.1679513!5e0!3m2!1sen!2s!4v1673191609010!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
-                    <div class="contact-form">
+                    <div class="contact-form" action="contact.php" method="POST">
                         <form>
                             <input type="text" name="name" id="name" placeholder="Name">
                             <input type="text" name="surname" id="surname" placeholder="Surname">
                             <input type="email" name="email" id="email" placeholder="Enter your email">
                             <textarea name="message" id="message" placeholder="Your message"></textarea>
-                            <button type="submit" class="btn">Submit</button>
+                            <button type="submit" name="submit" class="btn">Submit</button>
                         </form>
                     </div>
                 </main>

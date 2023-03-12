@@ -1,39 +1,45 @@
 <?php
-$host="localhost";
-$user="root";
-$password="12345";
-$db="ecommerce";
+require '../src/includes/dbconnect.php';
 
-$data=mysqli_connect($host, $user, $password, $db);
-if(!$data){
-    die("connection error");
+session_start();
+
+if( isset($_SESSION['user_id']) ){
+    header("Location: /");
 }
+$error = '';
+$errors = []; 
 
-// if($_SERVER["REQUEST_METHOD"]=="POST"){
-//     $email=$_POST["email"];
-//     $password=$_POST["password"];
+if(isset($_POST['submit'])):
+    if(strlen($_POST['email'])< 3)
+        $errors[] = 'email is empty or too short';
+    if(strlen($_POST['password'])< 6)
+        $errors[] = 'password is empty or too short';
+    
+    if(count($errors)=== 0){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $message = '';
+        $query = $pdo->prepare('SELECT id,name,email,password FROM users WHERE email = :email');
+        $query->bindParam(':email', $email);
+        $query->execute();
+        $email = $_POST['email'];
+        $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-//     $sql="select * from login where email='".$email."' AND password='".$password."'";
-// }
+        $user = $query->fetch();
+    }
+    
+    if(count($user) > 0 && password_verify($password, $user['password'])){
 
-// $result=mysqli_query($data, $sql);
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['name'] = $user['name'];
+        header ("Location: ../src/pages/Homepage.html");
+    } else {
+        $message = 'Sorry, those credentials do not match';
+    }
 
-// $row=mysqli_fetch_array($result);
+endif;
 
-if($row["usertype"]=="user"){
-    echo "user";
-}
-elseif($row["usertype"]=="admin"){
-    echo "admin";
-}
-else{
-    echo "email or password incorrect";
-}
 ?>
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +48,7 @@ else{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login/Register</title>
-    <link rel="stylesheet" href="/src/assets/css/login.css"> 
+    <link rel="stylesheet" href="/Promobi/src/assets/css/login.css"> 
     
 </head>
 <body>
@@ -61,16 +67,16 @@ else{
     <div class="container">
         <div class="wrapper">
             <div class="form">
-                <form id="login" name="Login/Register"action="index.html" method="POST">
+                <form id="login" name="Login/Register"action="login.php" method="POST">
                         <input type="text" id="email" name="email" placeholder="Enter your email"/>
                         <p id="email-label"></p>
                         <input type="text" id="password" name="password" placeholder="Enter your Password"/>
                         <p id="password-label"></p>
-                    <button type="submit">Submit</button>
+                    <button onclick="validateEmail()" type="submit" name="submit">Submit</button>
                 </form>
             </div>
         </div>
     </div>
 </body>
-<script src="/src/assets/js/form-validation.js"></script> 
+<script src="../src/assets/js/form-validation.js"></script>
 </html>
