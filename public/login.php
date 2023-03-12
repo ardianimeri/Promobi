@@ -1,24 +1,24 @@
-<?php>
+<?php
 $host="localhost";
 $user="root";
-$password="";
-$db="users";
+$password="12345";
+$db="ecommerce";
 
 $data=mysqli_connect($host, $user, $password, $db);
-if($data === false){
+if(!$data){
     die("connection error");
 }
 
-if($_SERVER["REQUEST_METHOD"]=="POST"){
-    $email=$_POST["email"];
-    $password=$_POST["password"];
+// if($_SERVER["REQUEST_METHOD"]=="POST"){
+//     $email=$_POST["email"];
+//     $password=$_POST["password"];
 
-    $sql="select * from login where email='".$email."' AND password='".$password."'";
-}
+//     $sql="select * from login where email='".$email."' AND password='".$password."'";
+// }
 
-$result=mysqli_query($data, $sql);
+// $result=mysqli_query($data, $sql);
 
-$row=mysqli_fetch_array($result);
+// $row=mysqli_fetch_array($result);
 
 if($row["usertype"]=="user"){
     echo "user";
