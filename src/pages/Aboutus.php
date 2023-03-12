@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rreth nesh</title>
-    <link rel="stylesheet" href="/src/assets/css/aboutus.css">
+    <link rel="stylesheet" href="/Promobi/src/assets/css/aboutus.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
@@ -20,25 +20,7 @@
         <div class="header">
             <div class="wrapper">
                 <header>
-                <img src="/public/logo.png" alt="Logo">
-                    <nav>
-                        <ul>
-                            <li><a class="nav-link" href="Homepage.html">Ballina</a></li>
-                            <li><a href="#">Produktet</a>
-                                <div class="sub-menu">
-                                    <ul>
-                                        <li><a class="nav-link" href="/src/pages/Kitchen.html">Kuzhina</a></li>
-                                        <li><a class="nav-link" href="/src/pages/LivingRoom.html">Salloni</a></li>
-                                        <li><a class="nav-link" href="/src/pages/Bedroom.html">Dhoma</a></li>
-                                        <li><a class="nav-link" href="/src/pages/Office.html">Zyre</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li><a class="nav-link" href="/src/pages/Aboutus.html">Rreth Nesh</a></li>
-                            <li><a class="nav-link" href="/src/pages/Contact.html">Kontakti</a></li>
-                            <li><a class="nav-link" href="">Log-In</a></li>
-                        </ul>
-                    </nav>
+                    <?php include '/xampp/htdocs/Promobi/public/includes/menuu.php'; ?>
                 </header>
             </div>
         </div>
@@ -51,7 +33,7 @@
                                 <a href="#historiku">RRETH NESH</a>
                             </h1>
                         </div>
-                        <img src="/src/assets/images/img-1.jpg" alt="rrethnesh-pic">
+                        <img src="/Promobi/src/assets/images/img-1.jpg" alt="rrethnesh-pic">
                     </div>
 
                     <div class="historikuwrapper">
@@ -125,25 +107,11 @@
         <div class="footer">
             <div class="wrapper">
                 <footer>
-                    <img src="/public/logo.png" alt="logo-footer">
-                    <div class="contact-container">
-                        <div class="text-example">
-                            <!-- <img src="assets/images/logo.png" alt="logo-footer"> -->
-                            <p><i class="fa fa-paper-plane"></i>Email</p>
-                            <p><i class="fa fa-phone"></i>Phone</p>
-                            <div class="social-icons">
-                                <a href="https://www.facebook.com/mobileriapromobi/"><i class="fa-brands fa-facebook"></i></a>
-                                <a href="https://www.instagram.com/promobi_mobileri/"><i class="fa-brands fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="location">
-                            <p>FERIZAJ</p><p>Magjistralja Ferizaj - Prishtine,</p><p>Afër Super Viva</p>
-                        </div>
-                    </div>
+                    <?php include '/xampp/htdocs/Promobi/public/includes/menu2.php'; ?>
                 </footer>
             </div>
         </div>
     </div>
 </body>
-<script src="/src/assets/js/nav.js"></script>
+<script src="/Promobi/src/assets/js/nav.js"></script>
 </html>
