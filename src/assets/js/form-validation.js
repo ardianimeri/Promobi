@@ -11,7 +11,7 @@ const phone = document.getElementById('phone')
             } else {
                 email.style.border = '3px solid green'
                 document.querySelector('#email-label').innerText = 'Email is valid'
-                window.location = "/src/pages/Homepage.html";
+                window.location = "../src/pages/Homepage.html";
             }
 
             // validate phone

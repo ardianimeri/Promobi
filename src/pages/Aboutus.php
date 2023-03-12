@@ -20,7 +20,28 @@
         <div class="header">
             <div class="wrapper">
                 <header>
+<<<<<<< HEAD:src/pages/Aboutus.php
                     <?php include '/xampp/htdocs/Promobi/public/includes/menuu.php'; ?>
+=======
+                    <img src="/Promobi/public/logo.png" alt="Logo">
+                    <nav>
+                        <ul>
+                            <li><a class="nav-link" href="Homepage.html">Ballina</a></li>
+                            <li><a href="#">Produktet</a>
+                                <div class="sub-menu">
+                                    <ul>
+                                        <li><a class="nav-link" href="/Promobi/src/pages/Kitchen.html">Kuzhina</a></li>
+                                        <li><a class="nav-link" href="/Promobi/src/pages/LivingRoom.html">Salloni</a></li>
+                                        <li><a class="nav-link" href="/Promobi/src/pages/Bedroom.html">Dhoma</a></li>
+                                        <li><a class="nav-link" href="/Promobi/src/pages/Office.html">Zyre</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a class="nav-link" href="/Promobi/src/pages/Aboutus.html">Rreth Nesh</a></li>
+                            <li><a class="nav-link" href="/Promobi/src/pages/Contact.html">Kontakti</a></li>
+                        </ul>
+                    </nav>
+>>>>>>> d1b9e0873d62c83a0518ae5c004be43ecd84782b:src/pages/Aboutus.html
                 </header>
             </div>
         </div>
@@ -107,7 +128,25 @@
         <div class="footer">
             <div class="wrapper">
                 <footer>
+<<<<<<< HEAD:src/pages/Aboutus.php
                     <?php include '/xampp/htdocs/Promobi/public/includes/menu2.php'; ?>
+=======
+                    <img src="/Promobi/public/logo.png" alt="logo-footer">
+                    <div class="contact-container">
+                        <div class="text-example">
+                            <!-- <img src="assets/images/logo.png" alt="logo-footer"> -->
+                            <p><i class="fa fa-paper-plane"></i>Email</p>
+                            <p><i class="fa fa-phone"></i>Phone</p>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/mobileriapromobi/"><i class="fa-brands fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/promobi_mobileri/"><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="location">
+                            <p>FERIZAJ</p><p>Magjistralja Ferizaj - Prishtine,</p><p>Afër Super Viva</p>
+                        </div>
+                    </div>
+>>>>>>> d1b9e0873d62c83a0518ae5c004be43ecd84782b:src/pages/Aboutus.html
                 </footer>
             </div>
         </div>

@@ -293,6 +293,7 @@ nav ul li:hover .sub-menu ul li a:hover {
     right: 0;
     bottom: 0;
     background-image: url(/Promobi/src/assets/images/kitchen-1.jpg);
+    background-image: url(/Promobi/src/assets/images/kitchen.jpg);
     background-position: center;
     background-size: cover;
     opacity: 0.3;
