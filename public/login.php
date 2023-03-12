@@ -1,3 +1,40 @@
+<?php>
+$host="localhost";
+$user="root";
+$password="";
+$db="users";
+
+$data=mysqli_connect($host, $user, $password, $db);
+if($data === false){
+    die("connection error");
+}
+
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $email=$_POST["email"];
+    $password=$_POST["password"];
+
+    $sql="select * from login where email='".$email."' AND password='".$password."'";
+}
+
+$result=mysqli_query($data, $sql);
+
+$row=mysqli_fetch_array($result);
+
+if($row["usertype"]=="user"){
+    echo "user";
+}
+elseif($row["usertype"]=="admin"){
+    echo "admin";
+}
+else{
+    echo "email or password incorrect";
+}
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,10 +61,10 @@
     <div class="container">
         <div class="wrapper">
             <div class="form">
-                <form id="login" name="Login/Register"action="index.html">
-                        <input type="text" id="email" placeholder="Enter your email"/>
+                <form id="login" name="Login/Register"action="index.html" method="POST">
+                        <input type="text" id="email" name="email" placeholder="Enter your email"/>
                         <p id="email-label"></p>
-                        <input type="text" id="password" placeholder="Enter your Password"/>
+                        <input type="text" id="password" name="password" placeholder="Enter your Password"/>
                         <p id="password-label"></p>
                     <button type="submit">Submit</button>
                 </form>
