@@ -447,11 +447,11 @@ footer .text-example p, a {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px; 
+        gap: 5px; 
     }
     header img{
 
-        width: 100px;
+        width: 90px;
     }
     nav ul li {
         /* height: 100px; */
